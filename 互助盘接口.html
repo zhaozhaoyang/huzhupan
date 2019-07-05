@@ -1,0 +1,949 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+        font-size: 13px;
+        line-height: 18px;
+        color: #737373;
+        background-color: white;
+        margin: 10px 13px 10px 13px;
+    }
+    table {
+       margin: 10px 0 15px 0;
+       border-collapse: collapse;
+   }
+   td,th {	
+       border: 1px solid #ddd;
+       padding: 3px 10px;
+   }
+   th {
+       padding: 5px 10px;	
+   }
+
+   a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+.first {
+    width: 13%;
+    float:left;
+    height:100%;
+    left:10;
+    position:fixed;
+    overflow-y:scroll;
+    color:rgba(0,0,0,.87);
+    background-color:rgba(239, 239, 239, .5);
+    padding-left:40;
+
+}
+.second {
+    width: 70%;
+    float:right;i
+    height: 100px;
+}
+
+#goToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+#goToTop a {
+   background: none repeat scroll 0 0 #336699;
+   border: 1px solid #CCCCCC;
+   border-radius: 3px;
+   -webkit-border-radius: 3px;
+   color: #FF9966;
+   font-size: 14px;
+   padding: 5px;
+   text-decoration: none;
+   text-shadow: 0 1px 0 #999;
+   -webkit-text-shadow: 0 1px 0 #999;            
+}
+.rollBox {
+    height: 2rem;
+    line-height: 2rem;
+    clear: both;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-snap-points-x: repeat(100%);
+    scroll-snap-type: mandatory;
+}
+</style>
+
+
+<div id="goToTop"><a href="#">返回顶部</a></div>
+
+<div class="first"> 
+    <a href="#1">1用户登陆注册</a>
+    <ul>
+        <li><a href="#10">1.0 用户登陆</a></li>
+		<li><a href="#11">1.1 忘记密码</a></li>
+		<li><a href="#12">1.2 获取验证码</a></li>
+		<li><a href="#13">1.3 注册</a></li>
+		<li><a href="#14">1.4 获取银行列表</a></li>
+        
+    </ul>
+
+    <a href="#2">首页</a>
+    <ul>
+        <li><a href="#20">2.0 获取首页数据</a></li>
+		<li><a href="#21">2.1 买入</a></li>
+		<li><a href="#22">2.2 卖出</a></li>
+		<li><a href="#23">2.3 预约排单</a></li>
+		<li><a href="#24">2.4 获取平台收款信息</a></li>
+		<li><a href="#25">2.5 买入卖出详情</a></li>
+		<li><a href="#26">2.6 获取预约天数列表</a></li>
+		<li><a href="#27">2.7 上传打印凭证</a></li>
+		<li><a href="#28">2.8 去人收款</a></li>
+    </ul>
+
+    <a href="#3">团队</a>
+    <ul>
+        <li><a href="#31">3.1 更换客服</a></li>
+        <li><a href="#32">3.2 直推</a></li>
+        <li><a href="#33">3.3 团队</a></li>
+        <li><a href="#34">3.4 获取我的客服</a></li>
+        <li><a href="#35">3.5 激活</a></li>
+		
+    </ul>
+    <a href="#4">账户</a>
+    <ul>
+        <li><a href="#40">4.0 兑换诚信值</a></li>
+        <li><a href="#41">4.1 兑换激活券</a></li>
+        <li><a href="#42">4.2 利息明细</a></li>
+        <li><a href="#43">4.3 奖励明细</a></li>
+        <li><a href="#44">4.4 积分明细</a></li>
+    </ul>
+	 <a href="#5">我的</a>
+    <ul>
+        <li><a href="#50">5.0 获取个人信息</a></li>
+        <li><a href="#51">5.1 修改密码</a></li>
+        <li><a href="#52">5.2 诚信值排行</a></li>
+        <li><a href="#53">5.3 获取公告</a></li>
+        <li><a href="#54">5.4 抽奖</a></li>
+	    <li><a href="#55">5.5 中奖记录</a></li>
+		<li><a href="#56">5.6 购买抽奖次数</a></li>
+		<li><a href="#57">5.7 修改个人信息</a></li>
+		<li><a href="#58">5.8 获取常见问题列表</a></li>
+		<li><a href="#59">5.9 版本更新</a></li>
+    </ul>
+</div>
+
+
+
+<div class="second"> 
+    <title>互助盘项目</title>
+</head>
+<body>
+    <h2>互助盘接口文档</h2>
+
+
+
+    <h4 id="1">1 登陆、注册</h4>
+
+    <h5 id="10">1.0 用户登陆</h5>
+    <pre><code>请求格式
+        {
+            cmd:”userLogin”
+            phone:""//用户手机号
+			password：//密码
+        }
+返回格式
+        {
+            result:"0" //0未注册 1已注册
+            resultNote:”失败原因”
+			uid://
+        }
+    </code></pre>
+
+    <h5 id="11">1.1 忘记密码</h5>
+    <pre><code>请求格式
+        {
+            cmd:forgetPassWord
+			phone：//用户手机号
+			password：//密码
+        }
+ 返回格式
+        {
+            result:"0" //0成功 1失败
+            resultNote:”失败原因”
+        }
+    </code></pre>
+	   <h5 id="3">1.3 注册</h5>
+    <pre><code>请求格式
+        {
+            cmd:register
+			nickName://昵称
+			email://邮箱
+			phone：//用户手机号
+			password：//密码
+			parentPhone://推荐人手机号
+			bankId：//银行id
+			bankNumber：//银行卡号
+			branch;		// 支行名字      
+			userName;		// 用户名字  
+			alipay;		// 支付宝账号     
+			remark;		// 备注        
+        }
+ 返回格式
+        {
+            result:"0" //0成功 1失败
+            resultNote:”失败原因”
+        }
+    </code></pre>
+    <h5 id="12">1.2 获取证码</h5>
+    <pre><code>请求格式
+        {
+            cmd:”sendSms”
+            phone:""//用户手机号
+        }
+返回格式
+        {
+			code：//
+            result:"0" //0成功 1失败
+            resultNote:”失败原因”
+        }
+    </code></pre>
+	    <h5 id="14">1.4 获取银行列表</h5>
+    <pre><code>请求格式
+        {
+            cmd:”getBankList”
+        }
+返回格式
+        {
+            result:"0" //0成功 1失败
+            resultNote:”失败原因”
+			dataList:[{
+				id：//
+				name://
+			}]
+        }
+
+		</code></pre>
+    <h4 id="2">2 首页</h4>
+
+    <h5 id="20">2.0 获取首页数据</h5>
+    <pre><code>请求格式
+        {
+            cmd:”getHomeData”
+			nowPage://
+        }
+返回格式
+        {
+            result:"0" //0成功 1失败
+            resultNote:”失败原因” 
+			totalPage
+			dataList:[{
+				id://
+				type://类型(1:买入2:卖出)
+				number//几轮
+				num://单号
+				nickName：//昵称
+				status：//1：待匹配2：部分完成3：已完成
+				money://
+				time://
+				
+			}]
+		}
+</code></pre>
+
+<h5 id="21">2.1买入</h5>
+<pre><code>请求格式
+    {
+        cmd:"buyIn"
+		uid://
+		type://是否是快速匹配(1:是2：不是)
+		money://
+    }
+返回格式
+    {
+        result:"0" //0成功 1失败
+        resultNote:”失败原因” 
+    }
+</code></pre>
+<h5 id="22">2.2卖出</h5>
+<pre><code>请求格式
+    {
+        cmd:"sellOut"
+		uid://
+		type://1:本息账户2:奖励账户
+		bankId：银行id
+		money：//
+    }
+返回格式
+    {
+        result:"0" //0成功 1失败
+        resultNote:”失败原因” 
+    }
+</code></pre>
+<h5 id="23">2.3预约排单</h5>
+<pre><code>请求格式
+    {
+        cmd:"reservationOrder"
+		uid://
+		settingId://
+		money：//
+    }
+返回格式
+    {
+        result:"0" //0成功 1失败
+        resultNote:”失败原因” 
+		dataList:[{
+			time://
+			money://
+			status://状态(1:已执行2：未执行)
+		}]
+    }
+</code></pre>
+<h5 id="24">2.4 获取平台收款信息</h5>
+<pre><code>请求格式
+    {
+        cmd:"getPlatMessage"
+    }
+返回格式
+    {
+        result:"0" //0成功 1失败
+        resultNote:”失败原因” 
+		image;		// 收款码          
+		weiXin;		// 官方客服微信号      
+		userName;		// 收款人      
+		bankName;		// 收款银行     
+		bankNumber;		// 收款账号     
+    }
+</code></pre>
+<h5 id="25">2.5 买入卖出详情</h5>
+<pre><code>请求格式
+    {
+        cmd:"getGoodsDetail"
+		id：//
+    }
+返回格式
+    {
+        result:"0" //0成功 1失败
+        resultNote:”失败原因”
+		type://类型(1:买入2:卖出)
+		number//几轮
+		num://单号
+		nickName：//昵称
+		status：//1：待匹配2：部分完成3：已完成
+		money://
+		time://
+		balance://已匹配
+		dataList:[{
+			id：//订单id
+			orderNum://订单号
+			status://订单状态（1：待上传凭证2：待确认3:已完成）
+			nickName1：//付款方
+			money：//
+			nickName2：//收款方
+			time://
+			phone1://付款人手机号
+			parentName1：//付款人领导
+			parentPhone1：付款人领导手机号
+			bankName：//银行
+			bankNumber：//银行卡号
+			branch;//支行
+			userName：//持有人
+			remark：//备注
+			phone2://收款方手机号
+			parentName2：//收款方领导
+			parentPhone2：收款方领导手机号
+			paytime：//付款时间
+		}]
+  
+    }
+</code></pre>
+<h5 id="26">2.6获取预约天数列表</h5>
+<pre><code>请求格式
+    {
+        cmd:"getSettingList"
+    }
+返回格式
+    {
+        result:"0" //0成功 1失败
+        resultNote:”失败原因” 
+		dataList:[{
+			id：//
+			name://
+			number://
+		}]
+    }
+</code></pre>
+<h5 id="27">2.7上传打印凭证</h5>
+<pre><code>请求格式
+    {
+        cmd:"uploadCertificate"
+		uid://
+		image://
+		id://订单id
+    }
+返回格式
+    {
+        result:"0" //0成功 1失败
+        resultNote:”失败原因” 
+		
+    }
+</code></pre>
+<h5 id="28">2.8确认收款</h5>
+<pre><code>请求格式
+    {
+        cmd:"confirmOrder"
+		uid://
+		id://订单id
+    }
+返回格式
+    {
+        result:"0" //0成功 1失败
+        resultNote:”失败原因” 
+		
+    }
+</code></pre>
+<h4 id="3">我的团队</h4>
+
+<h5 id="31">3.1  更换客服</h5>
+<pre><code>请求格式
+    {
+        cmd:"changeHelp"
+		uid://
+    }
+返回格式
+    {
+    result:"0" //0成功1失败
+    resultNote:"失败原因"
+    }
+</code></pre>
+
+<h5 id="32">3.2 直推</h5>
+<pre><code>请求格式
+    {
+        cmd:"getFirstChilds"	
+        uid://
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+        dataList:[{
+        "id":""//一级用户id
+		nickName://用户昵称
+		phone://手机号
+		time://注册时间
+		money://获得奖励
+		flag:// 是否激活(1:是2：否)
+		isHost：//是否托管(1:是0:否)
+    }]  
+}
+</code></pre>
+
+<h5 id="33">3.3 团队</h5>
+<pre><code>请求格式
+    {
+        cmd:"myAllChilds"
+		 uid://  
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+       dataList:[{
+			"id":""//一级用户id
+			nickName://用户昵称
+			phone://手机号
+			time://注册时间
+			money://获得奖励
+			flag:// 是否激活(1:是2：否)
+			isHost：//是否托管(1:是0:否)
+			secondChilds://[{
+				"id":""//一级用户id
+				nickName://用户昵称
+				phone://手机号
+				time://注册时间
+				money://获得奖励
+				flag:// 是否激活(1:是2：否)
+				isHost：//是否托管(1:是0:否)
+				threeChilds:[{
+					"id":""//一级用户id
+					nickName://用户昵称
+					phone://手机号
+					time://注册时间
+					money://获得奖励
+					flag:// 是否激活(1:是2：否)
+					isHost：//是否托管(1:是0:否)
+				}]
+			}]
+				
+	  }]
+}
+</code></pre>
+
+<h5 id="34">3.4 获取我的客服</h5>
+<pre><code>请求格式
+    {
+        cmd:"getHelp"	
+        uid:""//用户ID
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+		phone：客服电话
+		weiXin://微信号
+	}
+</code></pre>
+
+<h5 id="35">3.5 激活</h5>
+<pre><code>请求格式
+    {
+        cmd:"activationUser"	
+        uid:""//用户ID
+		childId;//子用户id
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"	
+    }
+</code></pre>
+ <h4 id="4">4 账户</h4>
+<h5 id="40">4.0 兑换诚信值</h5>
+<pre><code>请求格式
+    {
+        cmd:"exchangeIntegrity"	
+        uid://
+		money://
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+        
+}
+</code></pre>
+<h5 id="41">4.1 兑换激活券</h5>
+<pre><code>请求格式
+    {
+        cmd:"exchangeActivation"
+        uid:""//
+		type://1:本息账户2:奖励账户3：积分
+		number//数量
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+    }
+</code></pre>
+
+<h5 id="42">4.2 利息明细</h5>
+<pre><code>请求格式
+    {
+        cmd:"getInterestList"
+        uid:""//
+		nowPage://
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+		totalPage
+		dataList:[{
+			id://
+			name://类型
+			orderNum://交易号
+			money://金额
+			reward://获利
+			time://解冻日期
+			status://1.已生效2：未生效
+		}]
+    }
+</code></pre>
+<h5 id="43">4.3 奖励明细</h5>
+<pre><code>请求格式
+
+    {
+        cmd:"getRewardList"
+		 uid:""//
+		nowPage://
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+		totalPage
+		dataList:[{
+			id://
+			name://类型
+			orderNum://交易号
+			nickName://购物者
+			reward://获利
+			time://解冻日期
+			status://1.已生效2：未生效
+		}]
+}
+</code></pre>
+<h5 id="44">4.4 积分明细</h5>
+<pre><code>请求格式
+    {
+        cmd:"getPointsList"
+		 uid:""//
+		nowPage://
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+		totalPage
+		dataList:[{
+			id://
+			name://类型
+			orderNum://交易号
+			score://积分
+			time://时间
+		}]
+}
+</code></pre>
+<h4 id="5"> 我的</h4>
+<h5 id="50">5.0 获取个人信息</h5>
+<pre><code>请求格式
+    {
+        cmd:"getUserInfo"
+		 uid:""//
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+		phone：//用户手机号
+		icon：//头像
+		nickName://昵称
+		drawsNumber：//抽奖次数
+		email://邮箱
+		flag：//是否激活(1:是2：否)
+		time://注册时间
+		isOpen：//是否开启自动预约(1：是，0：否)
+		isHost://是否托管(1:是0:否)
+		parentId://领导id
+		parentName://领导名字
+		parentEmail://领导账号
+		parentPhone://领导手机号
+		integrityCoin;		// 诚信币 
+		integrityValue;		// 诚信值 
+		score;		// 积分       
+		principal;		// 本息
+		reward;		// 奖励    
+		number;		// 激活券数量
+		bankNumber;		// 银行卡号   
+		branch;		// 支行名字       
+		userName;		// 用户名字   
+		alipay;		// 支付宝账号      
+		remark;		// 备注 
+		num;		// 排单剩余轮数      
+        money;		// 排单额度        
+        
+		
+}
+</code></pre>
+<h5 id="51">5.1 修改密码</h5>
+<pre><code>请求格式
+    {
+        cmd:"editPassword"
+		 uid:""//
+		 password：//密码
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+		
+}
+</code></pre>
+<h5 id="52">5.2 诚信值排行</h5>
+<pre><code>请求格式
+    {
+        cmd:"getIntegrityValueList"
+		 nowPage
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+		totalPage
+		dataList:[{
+			id://
+			nickName://昵称
+			integrityValue://诚信值
+		}]
+		
+}
+</code></pre>
+<h5 id="53">5.3 获取公告</h5>
+<pre><code>请求格式
+    {
+        cmd:"getMessageList"
+		 nowPage
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+		totalPage
+		dataList:[{
+			id://
+			title://标题
+			time://时间
+			content://内容
+		}]
+		
+}
+</code></pre>
+<h5 id="54">5.4 抽奖</h5>
+<pre><code>请求格式
+    {
+        cmd:"lottery"
+		 uid:""//
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+		name://奖项名字	
+}
+</code></pre>
+<h5 id="55">5.5 中奖记录</h5>
+<pre><code>请求格式
+    {
+        cmd:"getLotteryList"
+		uid:""//有id查自己，没id查全部
+		nowPage
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因
+		totalPage
+		dataList:[{
+			phone://收集后四位
+			name://奖项
+			time://时间
+		}]
+}
+</code></pre>
+<h5 id="56">5.6 购买抽奖次数</h5>
+<pre><code>请求格式
+    {
+        cmd:"payLottery"
+		uid:""
+		type://1:本息账户2:奖励账户3：积分
+		number//数量
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因
+}
+</code></pre>
+<h5 id="57">5.7 修改个人信息</h5>
+<pre><code>请求格式
+    {
+        cmd:"editUserInfo"
+		uid:""
+		phone：//用户手机号
+		icon：//头像
+		nickName://昵称
+		drawsNumber：//抽奖次数
+		email://邮箱
+		flag：//是否激活(1:是2：否)
+		time://注册时间
+		isOpen：//是否开启自动预约(1：是，0：否)
+		isHost://是否托管(1:是0:否)
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因
+		
+}
+</code></pre>
+<h5 id="58">5.8 获取常见问题列表</h5>
+<pre><code>请求格式
+    {
+        cmd:"getQuestion"
+		
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+		dataList:[[
+			id://
+			question://问题
+			url://答案
+		]]
+}
+</code></pre>
+<h4 id="59">5.9 版本更新</h4>
+<pre><code>请求格式
+    {
+        cmd:"getVersion"
+		
+    }
+返回格式
+    {
+        result:"0" //0成功1失败
+        resultNote:"失败原因"
+		version://
+		versionNum://
+		url://
+		desc://
+}
+</code></pre>
+<h4 id="5">5.0 上传图片(单多张都可)</h4>
+<pre><code>请求格式
+
+    {
+      url:http://39.107.106.122/wisdom/api/addAlbums
+      uid:""//
+      file[]:""文件数组
+  }
+返回格式
+  {
+    result:"0" //0成功1失败
+    resultNote:"失败原因"
+    imgUrl:["",""] //地址
+    
+}
+</code></pre>
+</div>
+
+
+
+</body>
+</html>

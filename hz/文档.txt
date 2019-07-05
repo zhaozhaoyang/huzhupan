@@ -1,0 +1,11 @@
+原型
+https://org.modao.cc/app/d2b9e19644a7a0ed2817170f99958719f9ffdd23?tdsourcetag=s_pcqq_aiomsg#screen=s5FEAE2F2BC1555313665534
+UI
+https://lanhuapp.com/web/#/item/project/board?pid=e687e84f-9f9d-49eb-8552-103b64158df0&teamId=0db4c4d5-d09e-413d-9720-b347568a830f
+
+后台管理
+http://122.114.49.11:9008/huzhu/a/login;JSESSIONID=dd49496df59f4df19ccd433bb18218fd
+
+
+接口文档
+file:///C:/Users/Administrator/Documents/Tencent%20Files/2199866566/FileRecv/%E4%BA%92%E5%8A%A9%E7%9B%98.html

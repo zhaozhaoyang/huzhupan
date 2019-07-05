@@ -1,0 +1,21 @@
+
+//布局
+import { Row, Col } from 'vant';
+
+
+//去掉group边框
+.lg_2 [class*=van-hairline]::after{
+        border-top:none;
+    }
+
+
+//头部
+import headTop from "./commons/header";
+
+//版块
+import panel from "./commons/panel";
+
+
+uid:this.$store.state.uid || '9e2378c597824da6ae7938127c91bce9'
+
+uid:this.$store.state.uid || window.sessionStorage.getItem("uid")
